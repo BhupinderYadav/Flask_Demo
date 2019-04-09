@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd>
+<html>
+<head>
+<title>WDI_Report</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1
+  <link rel="shortcut icon" href="http://www.worldbank.org/content/dam/wbr/logo/wbg-favicon.png" type="image/png" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+.btn1 {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Darker background on mouse-over */
+.btn1:hover {
+  background-color: RoyalBlue;
+}
+ .head{
+ background-image: url(static/home-hero-light.jpg);
+ }
+
+.img-gradient {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .6;
+    background: rgba(0,0,0,0.35) !important;
+}
+
+
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+.hero-img, .news-hero-section .hero-img, .hero-v4 .hero-img, .hero-v2-section .hero-img {
+    overflow: hidden;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 300px;
+}
+</style>
+</head>
+<body>
+<div class="jumbotron text-center head">
+<span class="img-gradient"></span>
+<h1>World Development Indicator Report</h1>
+<h4>The World Development Indicators is a compilation of relevant, high-quality, and internationally comparable statistics
+about global development and the fight against poverty. The database contains 1,600 time series indicators for
+ 217 economies and more than 40 country groups, with data for many indicators going back more than 50 years.</h4>
+
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Select the WDI</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#CO2_Emissions">CO2 Emissions</a>
+    <a href="#GDP Comparison">GDP Comparison</a>
+    <a href="#Life_Expectancy">Life Expectancy</a>
+	<a href="#Population_Growth">Population Growth</a>
+	<a href="#Poverty_Rate">Poverty Rate</a>
+    <a href="#school_enrollment">school enrollment</a>
+    <a href="wdi/raw_data">Raw Data</a>
+
+  </div>
+</div>
+
+
+</div>
+
+<!--
+<div data-tap-disabled="true">
+ Development Indicators: <select name="test">
+ <option value="">--Please choose an option--</option>
+            <option value="co2emission">CO2 Emissions</option>
+            <option value="gdp_compare">GDP compare</option>
+            <option value="life_expectancy">life expectancy</option>
+            <option value="Population">Population</option>
+            <option value="poverty_ratio">poverty ratio</option>
+			<option value="school_enrollment">school enrollment</option>
+
+    </select>
+
+</div>-->
+
+
+<!-- Container (Portfolio Section) -->
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>Development Indicators</h2><br>
+   <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="  {{url_for('static', filename='co2emission.jpg')}}" alt="wdi" width="400" height="300">
+        <p><strong> CO2 Emissions</strong></p>
+        <p>CO2 emission Comparison btween India, Colombia and Canada</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="{{url_for('static', filename='gdp_compare.jpg')}}" alt="Financial_data_visualization" width="400" height="300">
+        <p><strong>GDP</strong></p>
+        <p>GDP comparison btween India, Colombia and Canada</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src=" {{url_for('static', filename='life_expectancy.jpg')}}" alt="realestate_data" width="400" height="300">
+        <p><strong>life expectancy</strong></p>
+        <p>life expectancy in Canada, India and Colombia</p>
+      </div>
+    </div>
+  </div><br>
+  <!-- Container_2 (Portfolio Section) -->
+  <div id="portfolio" class="container-fluid text-center bg-grey">
+
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="  {{url_for('static', filename='Population.jpg')}}" alt="wdi" width="400" height="300">
+        <p><strong> <a href="wdi.html">Population</a></strong></p>
+        <p></p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src=" {{url_for('static', filename='poverty_ratio.jpg')}}" alt="Financial_data_visualization" width="400" height="300">
+        <p><strong>poverty Rate</strong></p>
+        <p></p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="{{url_for('static', filename='school_enrollment.jpg')}}" alt="realestate_data" width="400" height="300">
+        <p><strong>School_Enrollment</strong></p>
+        <p></p>
+      </div>
+    </div>
+  </div><br>
+
+
+<div style="text-align: center;">
+<!--  Immage need to be changed on each selection from drop down-->
+<img id= "main_image" src=" {{url_for('static', filename='intial.jpg')}}" alt="temp_image" width="500" height="333">
+</div>
+
+<!-- Phara that need to be change on  every seletion-->
+<p id = "main_text" class="text-center">The primary World Bank collection of development indicators, compiled from officially-recognized international sources. It presents the most current and accurate global development data available, and includes national, regional and global estimates</p>
+
+
+
+<!-- Bottom page Image-->
+<img src="{{url_for('static', filename='wdi_page.jpg')}}" class="w3-image w3-greyscale-min" style="width:100%">
+
+
+
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+// changing para with selection of wdi
+var image = ['co2emission.jpg', 'gdp_compare.jpg', 'life_expectancy.jpg','Population.jpg','poverty_ratio.jpg','school_enrollment.jpg']
+
+
+function ImageChange() {
+  document.getElementById("main_image").src = img[0];
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>

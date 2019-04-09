@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Raw_Data</title>
+</head>
+<body>
+
+<h1>World Development Indicator Raw Data</h1>
+{% for Indicator in Indicators %}
+<li> {{Indicators.CountryName}} {{Indicators.CountryCode}} {{Indicators.SeriesName}} {{Indicators.SeriesCode}}
+  {{Indicators.YR2017}} {{Indicators.YR2018}}<li>
+{% endfor %}
+
+<table class="table table-hover">
+        <thead>
+          <tr>
+            <th>CountryName</th>
+            <th>CountryCode</th>
+            <th>SeriesName</th>
+            <th>SeriesCode</th>
+            <th>YR2009</th>
+            <th>YR2010</th>
+            <th>YR2011</th>
+                      <th>YR2012</th>
+                      <th>YR2013</th>
+                      <th>YR2014</th>
+                      <th>YR2015</th>
+                      <th>YR2016</th>
+                      <th>YR2017</th>
+                      <th>YR2018</th>
+          </tr>
+                  </thead>
+                  <tbody>
+                    {% for row in rows %}
+                  <tr>
+                    <td>{{row["CountryName"]}}</td>
+               <td>{{row["CountryCode"]}}</td>
+               <td> {{ row["SeriesName"]}}</td>
+               <td>{{row['SeriesCode']}}</td>
+               <td>{{row["YR2009"]}}</td>
+               <td>{{row["YR2010"]}}</td>
+               <td> {{ row["YR2011"]}}</td>
+               <td>{{row['YR2012']}}</td>
+               <td>{{row["YR2013"]}}</td>
+               <td>{{row["YR2014"]}}</td>
+               <td> {{ row["YR2015"]}}</td>
+               <td>{{row['YR2016']}}</td>
+               <td>{{row["YR2017"]}}</td>
+               <td>{{row["YR2018"]}}</td>
+              
+
+                  </tr>
+                    {% endfor %}
+                  </tbody>
+              </table>
+
+
+</body>
+</html>
